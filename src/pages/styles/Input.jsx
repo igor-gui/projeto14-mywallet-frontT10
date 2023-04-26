@@ -12,6 +12,7 @@ const Input = styled.input`
         font-size: 20px;
         font-weight: 400;
         text-align: left;
+        color: #000000;
     }
 `
 export default Input;

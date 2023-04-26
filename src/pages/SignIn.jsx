@@ -1,25 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "./styles/Input";
-import Button from "./styles/Button";
 import UserFormStyle from "./styles/UserFormStyle";
 import { useState } from "react";
+import { entrar } from "../services/api.js";
 
 export default function SignIn() {
-    const [form, setForm] = useState({email: '', password: ''});
-
-    function handleForm(e){
+    const [form, setForm] = useState({ email: '', password: '' });
+    const navigate = useNavigate()
+    function handleForm(e) {
         console.log(form)
-        setForm({...form, [e.target.name]: e.target.value})
+        setForm({ ...form, [e.target.name]: e.target.value })
     }
-    
+    function handleSubmit(e) {
+        e.preventDefault()
+        entrar(form)
+            .then((res) => {
+                console.log(res)
+                navigate('/')
+            })
+            .catch((err) => console.log(err))
+    }
 
     return (
         <UserFormStyle>
             <h1>My Wallet</h1>
-            <form>
-                <Input name="email" type="text" placeholder="E-mail" onChange={(e) => handleForm(e)}/>
-                <Input name="password" type="password" placeholder="Senha" onChange={(e) => handleForm(e)}/>
-                <Button className="button" type="submit">Entrar</Button>
+            <form onSubmit={handleSubmit}>
+                <Input name="email" type="text" placeholder="E-mail" onChange={(e) => handleForm(e)} />
+                <Input name="password" type="password" placeholder="Senha" onChange={(e) => handleForm(e)} />
+                <input className="button" type="submit" value={'Entrar'} />
             </form>
             <Link to="/sign-up">Primeira vez? Cadastre-se!</Link>
         </UserFormStyle>

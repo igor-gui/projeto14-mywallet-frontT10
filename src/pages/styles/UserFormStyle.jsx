@@ -31,6 +31,19 @@ width: 375px;
         flex-direction: column;
         align-items: center;
         gap: 13px;
+        .button {
+            height: 46px;
+            width: 326px;
+            border-radius: 5px;
+            border: 0;
+            background-color: #A328D6;
+            color: #ffff;
+            font-family: 'Raleway';
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+
+        }
         
     }
 `

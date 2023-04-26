@@ -1,18 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserFormStyle from "./styles/UserFormStyle";
 import Input from "./styles/Input";
-import Button from "./styles/Button";
+import { useState } from "react";
+import { cadastrar } from "../services/api";
 
-export default function SignUp(){
+export default function SignUp() {
+    const [form, setForm] = useState({ email: '', password: '', confirmPassword: '', name: '' });
+    const navigate = useNavigate()
+    function handleForm(e) {
+        console.log(form)
+        setForm({ ...form, [e.target.name]: e.target.value })
+    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        const promise = cadastrar(form);
+        promise
+            .then(
+                (res) => {
+                    alert('res.status.message')
+                    navigate('/home')
+                })
+            .catch((err) => console.log(err.message))
+    }
     return (
         <UserFormStyle>
             <h1>My Wallet</h1>
-            <form>
-                <Input placeholder="Nome" name="name" />
-                <Input placeholder="E-mail" name="email" />
-                <Input placeholder="Senha" name="password" />
-                <Input placeholder="Confirmar Senha" name="confirmPassword" />
-                <Button onSubmit={() => alert('kkkkkkk n ta feito dsclp')}>Cadastrar</Button>
+            <form onSubmit={handleSubmit}>
+                <Input placeholder="Nome" name="name" onChange={handleForm} />
+                <Input placeholder="E-mail" name="email" onChange={handleForm} />
+                <Input placeholder="Senha" type="password" name="password" onChange={handleForm} />
+                <Input placeholder="Confirmar Senha" type="password" name="confirmPassword" onChange={handleForm} />
+                <input type="submit" className="button" value="Cadastrar" />
             </form>
             <Link to='/'>Já tem uma conta? Entre agora!</Link>
         </UserFormStyle>
