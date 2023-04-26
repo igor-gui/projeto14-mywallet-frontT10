@@ -17,7 +17,7 @@ export default function SignUp() {
         promise
             .then(
                 (res) => {
-                    alert('res.status.message')
+                    alert(res.status.message)
                     navigate('/home')
                 })
             .catch((err) => console.log(err.message))
