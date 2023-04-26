@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignIn from "./pages/SignIn";
 import styled from "styled-components";
 import { AuthContextProvider } from "./contexts/auth";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -11,12 +12,12 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<SignIn />} />
-            <Route path="/sign-up" element={'signup'} />
+            <Route path="/sign-up" element={<SignUp/>} />
             <Route path="/home" element={"home"} />
           </Routes>
         </BrowserRouter>
       </AppStyle>
-      
+
     </AuthContextProvider>
   );
 }

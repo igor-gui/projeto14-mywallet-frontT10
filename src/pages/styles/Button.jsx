@@ -7,6 +7,10 @@ const Button = styled.button`
     background-color: #A328D6;
     border: 0;
     color: #ffff;
+    font-family: 'Raleway';
+    font-size: 20px;
+    font-weight: 700;
+
 
 `
 export default Button;
