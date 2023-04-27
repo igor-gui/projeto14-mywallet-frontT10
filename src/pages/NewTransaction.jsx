@@ -29,8 +29,8 @@ export default function NewTransaction() {
         <NewTransactionStyle>
             <h1>Nova Entrada</h1>
             <form onSubmit={handleSubmit}>
-                <Input name="description" onChange={(e) => handleForm()} placeholder="Descrição"/>
-                <Input name="price" onChange={(e) => handleForm()} placeholder="Valor"/>
+                <Input name="description" onChange={(e) => handleForm(e)} placeholder="Descrição"/>
+                <Input name="price" onChange={(e) => handleForm(e)} placeholder="Valor"/>
                 <input type="submit" className="button" value="Salvar entrada"/>
             </form>
         </NewTransactionStyle>

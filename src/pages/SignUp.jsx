@@ -18,8 +18,8 @@ export default function SignUp() {
         promise
             .then(
                 (res) => {
-                    alert(res.status.message)
-                    navigate('/home')
+                    alert('Usuário Cadastrado com sucesso!')
+                    navigate('/')
                 })
             .catch((err) => console.log(err.message))
     }

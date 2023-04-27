@@ -23,6 +23,7 @@ const NewTransactionStyle = styled.main`
             font-family: 'Raleway';
             font-size: 20px;
             font-weight: 700;
+            cursor: pointer;
 
         }
     }

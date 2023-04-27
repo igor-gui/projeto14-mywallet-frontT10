@@ -18,8 +18,8 @@ export default function SignIn() {
         entrar(form)
             .then((res) => {
                 console.log(res)
-                setUser(res.data)
-                navigate('/')
+                setUser(res)
+                navigate('/home')
             })
             .catch((err) => console.log(err))
     }

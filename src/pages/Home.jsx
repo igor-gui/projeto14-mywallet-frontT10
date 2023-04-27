@@ -39,10 +39,7 @@ export default function Home() {
             <Registers>
 
                 {
-                    transactions !== []
-                        ?
-                        transactions
-                        :
+                    transactions ? transactions :
                         <h5>
                             Não há registros de
                             entrada ou saída
