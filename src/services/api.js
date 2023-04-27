@@ -13,20 +13,20 @@ export function entrar(data) {
     return promise
 }
 
-export function postTransaction(type, token) {
+export function postTransaction(form, token) {
     const config = {
         headers: {
-            Authorization: `Bearer ${token}`
+            authorization: `Bearer ${token}`
         }
     }
-    const promise = api.post(`/nova-transacao/${type}`, config)
+    const promise = api.post(`/nova-transacao/${form.type}`, form, config)
     return promise;
 }
 
 export function getTransactions(token){
     const config = {
         headers: {
-            Authorization: `Bearer ${token}`
+            authorization: `Bearer ${token}`
         }
     }
     const promise = api.get('/transactions', config)

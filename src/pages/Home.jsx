@@ -12,6 +12,7 @@ export default function Home() {
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
     useEffect(() => {
+        console.log(user)
         getTransactions(user.token)
             .then(res => {
                 const transactionsList = res.data.map((e) => {

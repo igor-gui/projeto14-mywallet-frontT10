@@ -15,7 +15,7 @@ export default function NewTransaction() {
     
     function handleSubmit(e){
         e.preventDefault()
-        postTransaction(form.type, user.token)
+        postTransaction(form, user.token)
         .then((res) => {
             alert("Transação enviada")
             navigate('/home')

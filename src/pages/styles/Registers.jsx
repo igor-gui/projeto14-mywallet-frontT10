@@ -4,9 +4,11 @@ const Registers = styled.div`
     height: 446px;
     width: 326px;
     border-radius: 5px;
+    box-sizing: border-box;
+    padding-top: 23px;
     background-color: #FFFFFF;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 
     h5 {

@@ -17,8 +17,8 @@ export default function SignIn() {
         e.preventDefault()
         entrar(form)
             .then((res) => {
-                console.log(res)
-                setUser(res)
+                console.log(res.data)
+                setUser(res.data)
                 navigate('/home')
             })
             .catch((err) => console.log(err))
