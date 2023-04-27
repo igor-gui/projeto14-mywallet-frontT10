@@ -13,12 +13,22 @@ export function entrar(data) {
     return promise
 }
 
-export function postTransaction(data, type) {
-    const promise = api.post(`/nova-transacao/${type}`, data)
+export function postTransaction(type, token) {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+    const promise = api.post(`/nova-transacao/${type}`, config)
     return promise;
 }
 
-export function getTransactions(data){
-    const promise = api.get('/transactions', data)
+export function getTransactions(token){
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+    const promise = api.get('/transactions', config)
     return promise;
 }
