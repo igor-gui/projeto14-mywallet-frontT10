@@ -1,12 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import Input from "./styles/Input";
 import UserFormStyle from "./styles/UserFormStyle";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { entrar } from "../services/api.js";
+import { AuthContext } from "../contexts/auth";
 
 export default function SignIn() {
     const [form, setForm] = useState({ email: '', password: '' });
     const navigate = useNavigate()
+    const {setUser} = useContext(AuthContext)
     function handleForm(e) {
         console.log(form)
         setForm({ ...form, [e.target.name]: e.target.value })
@@ -16,6 +18,7 @@ export default function SignIn() {
         entrar(form)
             .then((res) => {
                 console.log(res)
+                setUser(res.data)
                 navigate('/')
             })
             .catch((err) => console.log(err))

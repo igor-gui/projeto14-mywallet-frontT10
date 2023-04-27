@@ -13,7 +13,8 @@ export default function SignUp() {
     }
     function handleSubmit(e) {
         e.preventDefault();
-        const promise = cadastrar(form);
+        if(form.confirmPassword !== form.password) return alert("As senhas precisam ser iguais!")
+        const promise = cadastrar({email:form.email, password: form.password, name: form.name});
         promise
             .then(
                 (res) => {

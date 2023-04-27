@@ -10,7 +10,7 @@ export default function NewTransaction() {
         setForm({...form, [e.target.name]: e.target.value});
         console.log(form)
     }
-
+    
     function handleSubmit(e){
         e.preventDefault()
         postTransaction(form, form.type)
