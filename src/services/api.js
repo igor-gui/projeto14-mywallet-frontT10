@@ -3,13 +3,13 @@ import axios from "axios";
 const api = axios.create({ baseURL: process.env.REACT_APP_BASE_URL });
 
 export function cadastrar(data) {
-    const promise = api.post('/cadastrar', data)
+    const promise = api.post('/cadastro', data)
     return promise
 }
 
 
 export function entrar(data) {
-    const promise = api.post('/sign-in', data)
+    const promise = api.post('/login', data)
     return promise
 }
 
