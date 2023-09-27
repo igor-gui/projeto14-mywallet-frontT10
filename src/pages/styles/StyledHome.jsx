@@ -16,7 +16,6 @@ const StyledHome = styled.main`
         justify-content: flex-start;
         gap: 163px;
         margin-bottom: 22px;
-        color: '#FFFFF';
 
         h1 {
             color: '#FFFFF';

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Registers = styled.div`
+    position: relative;
     height: 446px;
     width: 326px;
     border-radius: 5px;
