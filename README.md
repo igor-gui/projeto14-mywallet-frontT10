@@ -25,7 +25,7 @@ Digite a seguinte sequência de comandos no terminal:
 git clone https://github.com/igor-gui/projeto14-mywallet-front.git
 cd projeto14-my-wallet-front
 npm i
-npm run dev
+npm start
 ```
 <h5>Com chave ssh</h5>
 
@@ -33,7 +33,7 @@ npm run dev
 git clone git@github.com:igor-gui/projeto14-mywallet-front.git
 cd projeto14-my-wallet-front
 npm i
-npm run dev
+npm start
 ```
 
 Caso o navegador não abra automaticamente, clique no terminal e aperte a tecla "o".
